@@ -64,9 +64,9 @@ export abstract class Cliente {
             default:
                 tipo = "Tipo de Corte Invalida"
         }
-        console.log("************************************")
-        console.log("\n      Informações do Corte		 \n")
-        console.log("************************************\n")
+        console.log("\n************************************************************************")
+        console.log("\n     Informações do Cliente e Corte que irá realizar 	 \n")
+        console.log("************************************************************************\n")
         console.log(`ID do Cliente: ${this._id}`)
         console.log(`Nome do Cliente: ${this._nome}`)
         console.log(`Tipo do Corte: ${tipo}`)

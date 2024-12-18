@@ -1,3 +1,4 @@
+import { colors } from "../util/Colors";
 import { Cliente } from "./Cliente";
 
 export class Barba extends Cliente{
@@ -23,7 +24,7 @@ export class Barba extends Cliente{
 
     public visualizar(): void {
         super.visualizar();
-        console.log(`Descricao da Barba: ${this._descricaoBarba}`)
+        console.log(`Descricao da Barba: ${this._descricaoBarba} ${colors.reset}`)
 
     }
 

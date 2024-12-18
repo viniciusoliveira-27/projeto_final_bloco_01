@@ -1,3 +1,5 @@
+import { colors } from "../util/Colors";
+
 export abstract class Cliente {
 
     //definição do modelo de dados (esses são os atributos do Corte)
@@ -64,6 +66,7 @@ export abstract class Cliente {
             default:
                 tipo = "Tipo de Corte Invalida"
         }
+        console.log(colors.bg.whitebright, colors.fg.blackstrong)
         console.log("\n************************************************************************")
         console.log("\n     Informações do Cliente e Corte que irá realizar 	 \n")
         console.log("************************************************************************\n")

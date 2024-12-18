@@ -8,5 +8,6 @@ export interface ClienteRepository{
     procuraPorId(id: number): void;
     atualizarCliente(cliente: Cliente): void;
     deletar(id: number): void;
+    procurarPorNomeCliente(nome: string): void;
 
 }

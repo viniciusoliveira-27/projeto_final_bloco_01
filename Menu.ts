@@ -1,27 +1,29 @@
 import readlinesync = require("readline-sync");
+
 import { ClienteController } from "./src/controller/ClienteController";
 import { Cabelo } from "./src/model/Cabelo";
 import { Barba } from "./src/model/Barba";
+import { colors } from "./src/util/Colors";
 
 export function main() {
 
     let opcao, id, preco, tipo, tamanhoCabelo: number;
-    let nome, estiloCabelo, descricaoBarba : string;
+    let nome, estiloCabelo, descricaoBarba: string;
     const tipoCorte = ['Cabelo', 'Barba'];
 
     //Criando um objeto da classe ClienteController
     const clienteController = new ClienteController();
 
-    
+
     // Novas instancias da classe Cabelo
-    clienteController.cadastrarCliente(new Cabelo(clienteController.gerarId(), "Vinicius", 1, 30,"Corte Americano com degrade", 3));
+    clienteController.cadastrarCliente(new Cabelo(clienteController.gerarId(), "Vinicius", 1, 30, "Corte Americano com degrade", 3));
 
     // Novas instancias da classe Barba
-    clienteController.cadastrarCliente(new Barba(clienteController.gerarId(), "Jose Paulo", 2, 25,"Barba na regua, com direito a toalha quente e barbaterapia"));
+    clienteController.cadastrarCliente(new Barba(clienteController.gerarId(), "Jose Paulo", 2, 25, "Barba na regua, com direito a toalha quente e barbaterapia"));
 
     console.log("")
     do {
-
+        console.log(colors.bg.orange, colors.fg.whitestrong)
         console.log("************************************************************")
         console.log("\n                   Barbearia OldSchool Vini             \n")
         console.log("************************************************************")
@@ -30,8 +32,9 @@ export function main() {
         console.log("               3 - Consultar Cliente por ID                 ")
         console.log("               4 - Atualizar Cliente                        ")
         console.log("               5 - Deletar Cliente                          ")
+        console.log("               6 - Consultar Cliente                          ")
         console.log("               0 - Sair                                     ")
-        console.log("\n************************************************************\n")
+        console.log("\n************************************************************\n", colors.reset)
         opcao = readlinesync.questionInt("Digite a opcao desejada: ")
 
         if (opcao === 0) {
@@ -88,13 +91,13 @@ export function main() {
                 break;
 
             case 4:
-                id = readlinesync.questionInt("Digite o Id do Cliente: "); 
-                let cliente = clienteController.buscarNoArray(id); 
+                id = readlinesync.questionInt("Digite o Id do Cliente: ");
+                let cliente = clienteController.buscarNoArray(id);
                 if (cliente !== null) {
- 
-                    nome = readlinesync.question("Digite o Nome do Cliente: "); 
-                    tipo = cliente.tipo; 
-                    preco = readlinesync.questionFloat("Digite o preco do Corte: "); 
+
+                    nome = readlinesync.question("Digite o Nome do Cliente: ");
+                    tipo = cliente.tipo;
+                    preco = readlinesync.questionFloat("Digite o preco do Corte: ");
                     switch (tipo) {
 
                         case 1:
@@ -110,7 +113,7 @@ export function main() {
                             clienteController.atualizarCliente(new Barba(id, nome, tipo, preco, descricaoBarba));
                             break;
                     }
- 
+
                 } else
                     console.log("Cliente não Encontrado!")
 
@@ -126,6 +129,13 @@ export function main() {
                 keyPress();
                 break;
 
+            case 6:
+                console.log("\nDigite o nome do Cliente: ")
+                nome = readlinesync.question("")
+                clienteController.procurarPorNomeCliente(nome);
+
+                keyPress();
+                break;
             default:
                 console.log("Opcao invalida!")
         }

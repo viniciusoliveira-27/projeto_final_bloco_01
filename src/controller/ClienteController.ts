@@ -47,6 +47,14 @@ export class ClienteController implements ClienteRepository {
             console.log("\nCliente não encontrada")
     }
 
+    procurarPorNomeCliente(nome: string): void {
+        let buscaPorNome = this.listaClientes.filter(cliente => 
+            cliente.nome.toUpperCase().includes(nome.toUpperCase())
+        )
+        //Listagem dos dados
+        buscaPorNome.forEach(cliente => cliente.visualizar());
+    }
+
 
 
     //metodos auxiliares

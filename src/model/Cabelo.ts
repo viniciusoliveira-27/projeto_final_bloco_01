@@ -1,3 +1,4 @@
+import { colors } from "../util/Colors";
 import { Cliente } from "./Cliente";
 
 
@@ -33,7 +34,7 @@ export class Cabelo extends Cliente{
     public visualizar(): void {
         super.visualizar();
         console.log(`Estilo do Corte de Cabelo: ${this._estiloCabelo}`)
-        console.log(`Tamanho do Corte de Cabelo: ${this._tamanhoCabelo}`)
+        console.log(`Tamanho do Corte de Cabelo: ${this._tamanhoCabelo} ${colors.reset}`)
     }
 
 

@@ -23,7 +23,7 @@ export function main() {
 
     console.log("")
     do {
-        console.log(colors.bg.orange, colors.fg.whitestrong)
+        console.log(colors.bg.purple, colors.fg.whitestrong)
         console.log("************************************************************")
         console.log("\n                   Barbearia OldSchool Vini             \n")
         console.log("************************************************************")

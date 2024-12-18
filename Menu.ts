@@ -42,7 +42,6 @@ export function main() {
 
         switch (opcao) {
             case 1:
-                console.log(`\ncolocar as cores aqui!\n`)
                 console.log("Digite o ID do CLiente: ")
                 id = readlinesync.questionInt('')
 

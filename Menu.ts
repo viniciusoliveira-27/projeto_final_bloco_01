@@ -6,8 +6,6 @@ export function main() {
     let nome : string;
 
 
-
-
     console.log("")
     do {
 
@@ -24,7 +22,7 @@ export function main() {
         opcao = readlinesync.questionInt("Digite a opcao desejada: ")
 
         if (opcao === 0) {
-            console.log("Barbearia OldSchool Vini - Onde o Tratamento do Cliente vem em primeiro lugar! \n ")
+            console.log("\nBarbearia OldSchool Vini - Onde o Tratamento do Cliente vem em primeiro lugar! \n ")
             about();
             process.exit(0)
         }
